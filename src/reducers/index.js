@@ -5,15 +5,14 @@ import {
 	RECEIVE_BITCOIN_PRICE_FAILURE,
 	DATA_IS_LOADING,
 	DATA_FINISHED_LOADING,
-	UPDATE_ACCOUNT_BALANCE,
-	UPDATE_DOLLAR_QUOTE_AMOUNT
+	UPDATE_DOLLAR_INPUT
 } from '../actions'
 
 
 const initialState = {
-	accountFunds: "156.12",
-	totalBitcoins: "0",
-	dollarQuoteAmount: "0"
+	accountFunds: 156.12,
+	totalBitcoins: 0,
+	dollarInput: ''
 }
 
 export function isLoading(state = false, action) {
@@ -29,10 +28,10 @@ export function isLoading(state = false, action) {
 
 export function accountDetails(state = initialState, action) {
 	switch (action.type) {
-		case UPDATE_ACCOUNT_BALANCE:
-			return action;
-		case UPDATE_DOLLAR_QUOTE_AMOUNT:
-			return state.dollarQuoteAmount = action
+		case BUY_BITCOIN:
+			return Object.assign({}, state, {dollarInput: '', accountFunds: state.accountFunds - (+action.dollarAmount), totalBitcoins: (action.dollarAmount/action.bitcoinPrice) + state.totalBitcoins});
+		case UPDATE_DOLLAR_INPUT:
+			return Object.assign({}, state, {dollarInput: action.dollarAmount})
 		default:
 			return state
 	}
@@ -40,8 +39,6 @@ export function accountDetails(state = initialState, action) {
 
 export function bitcoin(state={}, action) {
 	switch (action.type) {
-		case BUY_BITCOIN:
-			return state;
 		case RECEIVE_BITCOIN_PRICE_SUCCESS:
 			return {price: action.price};
 		case RECEIVE_BITCOIN_PRICE_FAILURE:

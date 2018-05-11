@@ -55,7 +55,7 @@ const labelStyle = {
 	
 }
 
-const Trader = ({funds, bitcoins}) => {
+const Trader = ({funds, bitcoins, quoteAmount}) => {
 	return (
 		<div style={divStyle}>
 			<div>
@@ -75,10 +75,9 @@ const Trader = ({funds, bitcoins}) => {
 				<div style={colStyle}>
 					<label>Trade</label>
 					<input style={inputLightStyle} value='USD' readOnly/>
-					{/* <input style={inputDarkStyle} 
+					<input style={inputDarkStyle} 
 						placeholder='Enter your amount' 
-						onChange={this.handleDollarQuoteAmount}
-						value={this.props.dollarQuoteAmount}/> */}
+						value={quoteAmount}/>
 				</div>
 			</div>
 			<div style={rowStyle}>
@@ -97,7 +96,8 @@ const Trader = ({funds, bitcoins}) => {
 
 Trader.propTypes = {
 	funds: PropTypes.string.isRequired,
-	bitcoins: PropTypes.string.isRequired
+	bitcoins: PropTypes.string.isRequired,
+	quoteAmount: PropTypes.string.isRequired
 }
 
 export default Trader;
