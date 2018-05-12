@@ -6,17 +6,17 @@ import Trader from '../../components/Trader';
 
 const divStyle = {
 	width: '400px',
-	margin: '5px',
-	padding: '5px',
+	margin: '10px',
+	padding: '10px 5px',
 	backgroundColor: '#F8F8F8',
 	textAlign: 'center',
-
+	fontFamily: 'sans-serif'
 };
 
 const inlineStyle = {
 	display: 'inline-block',
 	textAlign: 'left',
-	fontWeight: '550',
+	fontWeight: '400',
 }
 
 const buttonStyle = {
@@ -26,7 +26,7 @@ const buttonStyle = {
 	textAlign: 'center',
 	height: '75px',
 	margin: '0 auto',
-	marginBottom: '40px',
+	marginBottom: '35px',
 	fontSize: 'larger',
 	letterSpacing: '1px'
 }
@@ -34,21 +34,23 @@ const buttonStyle = {
 const inputLightStyle = {
 	borderColor: '#8D8C8D',
 	borderStyle: 'solid',
-	margin: '15px auto',
+	margin: '10px auto',
 	borderWidth: '1px',
 	width: '70%',
 	height: '50px',
-	paddingLeft: '15px'
+	paddingLeft: '15px',
+	fontSize: 'medium'
 }
 
 const inputDarkStyle = {
 	borderColor: '#484848',
 	borderStyle: 'solid',
-	margin: '15px auto',
+	margin: '10px auto',
 	borderWidth: '1px',
 	width: '70%',
 	height: '50px',
-	paddingLeft: '15px'
+	paddingLeft: '15px',
+	fontSize: 'medium'
 }
 
 const rowStyle = {
@@ -57,17 +59,28 @@ const rowStyle = {
 
 const colStyle = {
 	display: 'inline-grid',
-	width: '100%'
+	width: '100%',
+	marginBottom: '10px',
+	marginTop: '10px'
 }
 
 const colLeftAlignStyle = {
 	textAlign: 'left',
 	margin: '0 auto',
+	marginTop: '5px',
+	marginBottom: '5px',
 	width: '75%'
 }
 
-const labelLeftAlign = {
-	paddingLeft: '15px'
+const leftAlignStyle = {
+	paddingLeft: '15px',
+	textAlign: 'left',
+	paddingBottom: '10px'
+}
+
+const lightStyle = {
+	marginLeft: '10px',
+	fontWeight: '300'
 }
 
 class Home extends Component {
@@ -79,21 +92,23 @@ class Home extends Component {
 		return (
 			<div style={divStyle}>
 				<div style={colLeftAlignStyle}>
-					<label >Account Balance</label>
-						<div>
+					<label style={leftAlignStyle}>Account Balance</label>
+					<div style={colStyle}>
+						<div style={colLeftAlignStyle}>
 							<label style={inlineStyle}>USD</label>
-							{this.props.accountFunds.toFixed(2)}
+							<label style={lightStyle}>{this.props.accountFunds.toFixed(2)}</label>
 						</div>
-						<div>
+						<div style={colLeftAlignStyle}>
 							<label style={inlineStyle}>BTC</label>
-							{this.props.totalBitcoins.toFixed(8)}
+							<label style={lightStyle}>{this.props.totalBitcoins.toFixed(8)}</label>
 						</div>
+					</div>
 				</div>
 
 				<div style={rowStyle}>
 					<div style={colStyle}>
 						<div style={colLeftAlignStyle}>
-							<label style={labelLeftAlign}>Trade</label>
+							<label style={leftAlignStyle}>Trade</label>
 						</div>
 						<input style={inputLightStyle} value='USD' readOnly/>
 						<input style={inputDarkStyle} 
@@ -109,7 +124,7 @@ class Home extends Component {
 				<div style={rowStyle}>
 					<div style={colStyle}>
 						<div style={colLeftAlignStyle}>
-							<label style={labelLeftAlign}>For</label>
+							<label style={leftAlignStyle}>For</label>
 						</div>
 						<input style={inputDarkStyle} value='BTC' readOnly/>
 						<input style={inputLightStyle}
