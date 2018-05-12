@@ -54,22 +54,16 @@ export function updateDollarInput(amount) {
 }
 
 export function fetchBitcoinPrice() {
-	// const url = "https://cors-anywhere.herokuapp.com/https://api.bitfinex.com/v1/pubticker/btcusd"
-	// return (dispatch) => {
-	// 	fetch(url)
-	// 		.then((response) => response.json())
-	// 		.then((json) => {
-	// 			dispatch(receiveBitcoinPriceSuccess(json.last_price))
-	// 		})
-	// 		.catch(() => {
-	// 			dispatch(receiveBitcoinPriceFailure(true))
-	// 		})
-
-	// }
-
+	const url = "https://cors-anywhere.herokuapp.com/https://api.bitfinex.com/v1/pubticker/btcusd"
 	return (dispatch) => {
-		//dispatch(dataIsLoading())
-		dispatch(receiveBitcoinPriceSuccess(1337.98))
-		//dispatch(dataFinishedLoading()
+		fetch(url)
+			.then((response) => response.json())
+			.then((json) => {
+				dispatch(receiveBitcoinPriceSuccess(+json.last_price))
+			})
+			.catch(() => {
+				dispatch(receiveBitcoinPriceFailure(true))
+			})
+
 	}
 }
