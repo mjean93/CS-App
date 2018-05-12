@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { buyBitcoin, fetchBitcoinPrice, updateDollarInput } from '../../actions';
-import Trader from '../../components/Trader';
 
 const divStyle = {
 	width: '400px',
@@ -164,8 +163,6 @@ Home.propTypes = {
 }
 
 const mapStateToProps = state => {
-	console.log(state);
-
 	return {
 		accountFunds: state.accountDetails.accountFunds,
 		totalBitcoins: state.accountDetails.totalBitcoins,

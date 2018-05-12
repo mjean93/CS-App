@@ -4,13 +4,15 @@
   "description": "Take home exercise for coinsquare",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
+    "test:watch": "npm test -- --watch",
     "start": "webpack-dev-server --mode development"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "axios": "^0.18.0",
+    "npm": "^6.0.1",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
     "react-redux": "^5.0.7",
@@ -20,10 +22,12 @@
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
+    "babel-jest": "^22.4.3",
     "babel-loader": "^7.1.4",
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
     "css-loader": "^0.28.11",
+    "jest": "^22.4.3",
     "redux-devtools": "^3.4.1",
     "style-loader": "^0.21.0",
     "webpack": "^4.6.0",
