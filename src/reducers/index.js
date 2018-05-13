@@ -15,16 +15,16 @@ const initialState = {
 	dollarInput: ''
 }
 
-export function isLoading(state = false, action) {
-    switch (action.type) {
-        case DATA_IS_LOADING:
-			return action.isLoading
-		case DATA_FINISHED_LOADING:	
-			return action.isLoading
-        default:
-            return state;
-    }
-}
+// export function isLoading(state = false, action) {
+//     switch (action.type) {
+//         case DATA_IS_LOADING:
+// 			return action.isLoading
+// 		case DATA_FINISHED_LOADING:	
+// 			return action.isLoading
+//         default:
+//             return state;
+//     }
+// }
 
 export function accountDetails(state = initialState, action) {
 	switch (action.type) {
@@ -49,7 +49,7 @@ export function bitcoin(state={}, action) {
 }
 
 export default combineReducers({
-    isLoading,
+    //isLoading,
 	accountDetails,
 	bitcoin
 });

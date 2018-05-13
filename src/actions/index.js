@@ -1,7 +1,7 @@
 export const BUY_BITCOIN = 'BUY_BITCOIN'
 export const RECEIVE_BITCOIN_PRICE_SUCCESS = 'RECEIVE_BITCOIN_PRICE_SUCCESS'
 export const RECEIVE_BITCOIN_PRICE_FAILURE = 'RECEIVE_BITCOIN_PRICE_FAILURE'
-export const DATA_IS_LOADING = 'DATA_IS_LOADING'
+//export const DATA_IS_LOADING = 'DATA_IS_LOADING'
 export const UPDATE_DOLLAR_INPUT = 'UPDATE_DOLLAR_INPUT'
 
 //actions
@@ -32,19 +32,19 @@ export function receiveBitcoinPriceFailure(error) {
 	}
 }
 
-export function dataIsLoading() {
-	return {
-		type: DATA_IS_LOADING,
-		isLoading: true
-	}
-}
+// export function dataIsLoading() {
+// 	return {
+// 		type: DATA_IS_LOADING,
+// 		isLoading: true
+// 	}
+// }
 
-export function dataFinishedLoading() {
-	return {
-		type: DATA_IS_LOADING,
-		isLoading: false
-	}
-}
+// export function dataFinishedLoading() {
+// 	return {
+// 		type: DATA_IS_LOADING,
+// 		isLoading: false
+// 	}
+// }
 
 export function updateDollarInput(amount) {
 	return {
