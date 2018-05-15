@@ -3,7 +3,8 @@ This app allows a user to trade USD for bitcoin, going off of its last price.  I
 Note that this app really only deals with happy pathing of user iteraction with some minimal error checking.  In order for it to go into production, further error handling will be required.
 
 How to run tests:
-1. From any directory, run npm test
+1. If you haven't already, run npm install from the main directory of the app from terminal/console
+2. From any directory, run npm test
 
 How to run this app:
 
